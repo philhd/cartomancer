@@ -14,12 +14,12 @@ export default function MoodCards() {
   
     return (
       <div className="min-h-screen bg-gray-100 p-8">
-        <h1 className="text-4xl font-bold text-center mb-8">How are you feeling today?</h1>
+        <h1 className="text-4xl text-black font-bold text-center mb-8">How are you feeling today?</h1>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {cards.map((card, idx) => (
             <div key={idx} className="bg-white rounded-lg shadow p-6 flex flex-col justify-between">
-              <h2 className="text-2xl font-semibold mb-2">{card.title}</h2>
-              <p className="text-gray-600">{card.description}</p>
+              <h2 className="text-2xl text-gray-600 font-semibold mb-2">{card.title}</h2>
+              <p className="text-gray-400">{card.description}</p>
             </div>
           ))}
         </div>
