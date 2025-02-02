@@ -1,9 +1,10 @@
 // app/api/auth/login/route.ts
+import { generateRandomString } from "@/app/utils/securityUtils";
 import { NextResponse } from "next/server";
 
+
 export async function GET(request: Request) {
-  // A simple (insecure) state string for demo purposes.
-  const state = Math.random().toString(36).substring(2, 15);
+  const state = generateRandomString(16);
   const scope = "user-read-email user-read-private";
 
   const params = new URLSearchParams({

@@ -29,9 +29,7 @@ export async function GET(request: Request) {
 
   if (data.access_token) {
     const res = NextResponse.redirect(new URL("/", request.url));
-    // For simplicity, we store the access token in a cookie.
-    // In production you might want to set httpOnly and secure flags.
-    res.cookies.set("spotifyToken", data.access_token, { path: "/" });
+    res.cookies.set("spotifyToken", data.access_token, { path: "/", httpOnly: true });
     return res;
   } else {
     return NextResponse.json({ error: "Failed to obtain access token", details: data }, { status: 500 });
