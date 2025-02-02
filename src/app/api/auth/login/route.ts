@@ -3,7 +3,7 @@ import { generateRandomString } from "@/app/utils/securityUtils";
 import { NextResponse } from "next/server";
 
 
-export async function GET(_request: Request) {
+export async function GET() {
   const state = generateRandomString(16);
   const scope = "user-read-email user-read-private";
 
